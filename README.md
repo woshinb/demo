@@ -1,14 +1,14 @@
 # demo
 Usage
 
-Planning phase
+Planning phase：
 
 terraform plan
 
-Apply phase
+Apply phase：
 
 terraform apply
 
-Destroy
+Destroy：
 
 terraform destroy
