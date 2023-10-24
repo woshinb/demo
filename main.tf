@@ -122,6 +122,10 @@ resource "kubernetes_service" "nginx" {
     }
 
     type = "NodePort"  
+
+    node_port {
+      http = 30080
+    }
   }
 }
 
