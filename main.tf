@@ -131,32 +131,3 @@ resource "null_resource" "deploy_nginx" {
     command = "kubectl get pod --kubeconfig=~/.kube/config"
   }
 }
-
-
-
-output "nginx_welcome_page" {
-  value = {
-    url = "http://ip"
-  }
-}
-
-
-
-#!/bin/bash
-container_name="your_container_name"
-
-log_file="container_stats.log"
-
-while true; do
-    timestamp=$(date "+%Y-%m-%d %H:%M:%S")
-
-    cpu_stats=$(docker stats --no-stream $container_name --format "{{.CPUPerc}}")
-
-    mem_stats=$(docker stats --no-stream $container_name --format "{{.MemUsage}}")
-
-    echo "$timestamp - CPU: $cpu_stats, Memory: $mem_stats" >> $log_file
-
-    sleep 10
-done
-
-cat $file | tr -s '[:space:]' '\n' | sort | uniq -c | sort -nr
